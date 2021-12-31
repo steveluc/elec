@@ -1,4 +1,8 @@
-const { app, BrowserWindow } = require('electron');
+import { app, BrowserWindow } from "electron";
+// import * as fs from "fs";
+
+// fs.writeFileSync("testnode","Contents!");
+
 function createWindow () {
     // Create the browser window.
     let win = new BrowserWindow({
