@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = {
   mode: "production",
-  entry: path.resolve(__dirname, './src/clientmain.ts'),
+  entry: path.resolve(__dirname, './src/client/clientmain.ts'),
   module: {
     rules: [
       {
@@ -24,7 +24,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "./src/index.html")
+      template: path.resolve(__dirname, "./src/client/index.html")
     })
   ]
 };

@@ -1,17 +1,22 @@
 module.exports = [
     {
       mode: 'development',
-      entry: './src/electron.ts',
+      entry: './src/server/electron.ts',
       target: 'electron-main',
       module: {
-        rules: [{
-          test: /\.ts$/,
-          include: /src/,
-          use: [{ loader: 'ts-loader' }]
-        }]
+        rules: [
+          {
+            test: /\.tsx?$/,
+            use: 'ts-loader',
+            exclude: /node_modules/,
+          }
+        ]
+      },
+      resolve: {
+        extensions: ['.tsx', '.ts', '.js'],
       },
       output: {
-        path: __dirname + '/dist',
+        path: __dirname + '/dist', 
         filename: 'electron.js'
       }
     }
