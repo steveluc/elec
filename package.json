@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run build && electron dist/electron.js",
-    "build": "webpack --config ./webpack-cli.config.js && webpack --config ./webpack.config.js"
+    "build": "webpack --config ./webpack-cli.config.js && webpack --config ./webpack.config.js && webpack --config ./webpack-preload.config.js"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +22,7 @@
     "webpack-cli": "^4.9.1"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "express": "^4.17.2"
   }
 }
