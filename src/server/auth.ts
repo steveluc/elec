@@ -8,7 +8,7 @@ export function authenticate(win: BrowserWindow) {
   //authentication code will go here
   let clientId = keys.client_id;
   let redirectURI = "http://localhost/bobify/oauth";
-  let scope = "user-read-private user-read-email";
+  let scope = "user-read-private user-read-email streaming user-top-read user-read-currently-playing user-read-recently-played user-read-playback-state user-modify-playback-state";
 
   let params = {
     response_type: "code",
