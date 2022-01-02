@@ -1,7 +1,7 @@
 import { app, BrowserWindow, ipcMain } from "electron";
 import * as express from "express";
 import { Request as EReq, Response as ERes } from "express";
-import { authenticate } from "./auth";
+import { authenticate, authRouter } from "./auth";
 import path from "path";
 // import * as fs from "fs";
 
@@ -11,6 +11,8 @@ const port = 3008;
 eapp.get("/", (req: EReq, res: ERes) => {
   res.send("Hello express world!");
 });
+
+eapp.use("/auth", authRouter);
 
 eapp.listen(port, () => {
   console.log(`server started at http://localhost:${port}`);
