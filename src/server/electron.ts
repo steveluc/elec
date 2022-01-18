@@ -3,6 +3,7 @@ import * as express from "express";
 import { Request as EReq, Response as ERes } from "express";
 import { authenticate, authRouter } from "./auth";
 import path from "path";
+import { spotifyRouter } from "./spotify";
 // import * as fs from "fs";
 
 const eapp = express();
@@ -13,6 +14,7 @@ eapp.get("/", (req: EReq, res: ERes) => {
 });
 
 eapp.use("/auth", authRouter);
+eapp.use("/spotify", spotifyRouter);
 
 eapp.listen(port, () => {
   console.log(`server started at http://localhost:${port}`);
